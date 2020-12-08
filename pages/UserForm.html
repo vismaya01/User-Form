@@ -89,7 +89,7 @@
             const pwd = document.querySelector('#pwd');
             const pwdError = document.querySelector('.pwd-error');
             pwd.addEventListener('input', function() {
-            const regtel = /^(?=.*?[a-z]).{8,}$/;
+            const regtel = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?!(?:.*[!@#$%^&*]){2})[a-zA-Z0-9!@#$%^&*]{8,}$/;
             if (regtel.test(pwd.value))
                 pwdError.textContent = "";
             else 
