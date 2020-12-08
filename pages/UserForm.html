@@ -34,6 +34,7 @@
             <div>
                 <label for="tel">tel input type:</label>
                 <input type="tel" id="tel" name="tel">
+                <error-output class="tel-error" for="tel"></error-output>
             </div>
             <div>
                 <label for="search">Search input type: </label>
@@ -73,6 +74,15 @@
             else
                 emailError.textContent="Email is incorrect";
             })
+
+            const tel = document.querySelector('#tel');
+            const telError = document.querySelector('.tel-error');
+            tel.addEventListener('input', function() {
+            const regtel = /^[9][1][0-9]{10}$/;
+            if (regtel.test(tel.value))
+                telError.textContent = "";
+            else telError.textContent = "MobileNo is Incorrect "; 
+            });
 
             const salary=document.querySelector('#salary');
             const output=document.querySelector('.salary-output');
